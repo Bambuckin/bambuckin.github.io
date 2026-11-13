@@ -633,7 +633,7 @@ a:not(.btn):not(.ccopy):hover, .topbar__meta a:not(.btn):hover, .band .cval:hove
 .page-cv .hero .role { text-wrap: wrap; max-width: none; }
 
 /* Сессия 24: больше акцентов — заголовки разделов, номера шагов, полосы графика цветом кнопки */
-.page-ai h2, .page-cv h2 { color: var(--accent); }
+.page-ai h3, .page-cv h3, .page-cv .gantt__label b { color: var(--accent); }
 .page-ai .cta__title, .page-cv .cta__title, .band__label { color: inherit; }
 .steps__n { background: var(--accent) !important; color: #fff !important; box-shadow: none !important; }
 .gantt__bar { background: var(--accent); }
