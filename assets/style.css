@@ -593,3 +593,15 @@ a.ccopy { text-decoration: none; display: inline-flex; align-items: center; }
   .page-ai .band__in, .page-cv .band__in { grid-template-columns: auto minmax(0, 1fr); column-gap: clamp(48px, 6vw, 96px); }
   .band .cbox { flex-wrap: nowrap; white-space: nowrap; }
 }
+
+/* Тест: цветное фото на ai (квадратное, мало места над головой) */
+@media screen and (min-width: 861px) {
+  .page-ai .hero__media { top: 72px; }
+  .page-ai .hero__media img { object-position: 50% 0; }
+}
+@media screen and (max-width: 860px) {
+  .page-ai .hero:not(.hero--space) .hero__media img { transform: scale(1.45); transform-origin: 50% 24%; object-position: 50% 0; }
+}
+@media print {
+  .page-ai .hero__media img { transform: scale(1.45); transform-origin: 50% 24%; }
+}
