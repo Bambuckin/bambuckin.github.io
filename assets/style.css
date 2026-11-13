@@ -627,5 +627,6 @@ a:not(.btn):not(.ccopy):hover, .topbar__meta a:not(.btn):hover, .band .cval:hove
 
 /* Сессия 23: шапка ai как у общей — крупное имя, под ним подзаголовок вдвое меньше; мелкое имя в верхней полосе убрано */
 .page-ai .topbar__name, .page-cv .topbar__name { visibility: hidden; }
-.page-ai .hero .role { margin-top: 18px; font-size: calc(var(--fs-h1) * 0.5); line-height: 1.18; letter-spacing: -0.015em; color: var(--ink); max-width: 15em; text-wrap: balance; }
-@media screen and (max-width: 640px) { .page-ai .hero .role { margin-inline: auto; } }
+.page-ai .hero .role, .page-cv .hero .role { margin-top: 18px; font-size: calc(var(--fs-h1) * 0.5); line-height: 1.18; letter-spacing: -0.015em; color: var(--ink); max-width: 15em; text-wrap: balance; }
+@media screen and (max-width: 640px) { .page-ai .hero .role, .page-cv .hero .role { margin-inline: auto; } }
+.page-cv .hero .role { text-wrap: wrap; max-width: none; }
