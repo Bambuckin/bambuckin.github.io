@@ -519,7 +519,6 @@ a, button { transition: color .2s var(--soft), background-color .2s var(--soft),
 }
 
 /* Сессия 18: имя в верхней полосе убрано на ai/index, мягкий край фото, низкий подвал */
-.page-ai .topbar__name, .page-cv .topbar__name { visibility: hidden; }
 @media screen and (min-width: 861px) {
   .hero:not(.hero--space) .hero__media {
     -webkit-mask-image: linear-gradient(to right, transparent 0, #000 28px), linear-gradient(to top, transparent 0, #000 28px);
@@ -530,4 +529,41 @@ a, button { transition: color .2s var(--soft), background-color .2s var(--soft),
   .page-ai .band__in, .page-cv .band__in { grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); align-items: start; }
   .page-ai .band__head, .page-cv .band__head { padding-top: 20px; }
   .page-ai .clist, .page-cv .clist { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Сессия 19: имя в шапке вернули; на ai строка-eyebrow убрана (в PDF остаётся) */
+@media screen { .page-ai .hero .eyebrow { display: none; } }
+
+/* Сессия 19: телефон — центровка, плотнее, круглое фото без зума */
+@media screen and (max-width: 640px) {
+  .page-ai, .page-cv { --sec: 40px; }
+  .page-ai .shead, .page-cv .shead { margin-bottom: 20px; }
+  .hero:not(.hero--space) .hero__media { width: 148px; height: 148px; margin: 84px auto 0; }
+  .hero:not(.hero--space) .hero__media img { transform: none; object-position: 50% 0; }
+  .page-ai .hero__copy, .page-cv .hero__copy { padding: 20px 0 8px; text-align: center; }
+  .page-ai .hero h1, .page-cv .hero h1, .page-ai .lead, .page-cv .lead { margin-inline: auto; }
+  .page-ai .shead, .page-cv .shead { justify-content: center; text-align: center; }
+  .page-ai h2, .page-cv h2 { margin-inline: auto; text-align: center; }
+  .page-ai .note, .page-ai .why, .page-ai .case, .page-ai .tiles li,
+  .page-cv .feature, .page-cv .meta li, .page-cv .skills section, .page-cv .showcase,
+  .band__head, .clist li, .cta__in { text-align: center; }
+  .cta__in { flex-direction: column; align-items: center; }
+  /* сравнение: стопкой по центру, вывод — мягкой плашкой */
+  .compare__row { grid-template-columns: 1fr; gap: 8px; padding: 24px 0; text-align: center; }
+  .compare__lbl, .compare__from, .compare__ai { grid-column: 1; grid-row: auto; }
+  .compare__where { margin: 4px 0 0; }
+  .compare__ai { border-left: 0; padding: 12px 16px; margin-top: 6px; background: var(--surface); border-radius: 12px; }
+  /* шаги: номер слева на уровне середины текста, блок по центру */
+  .steps { max-width: 340px; margin-inline: auto; gap: 22px; }
+  .steps li { display: grid; grid-template-columns: 36px 1fr; column-gap: 16px; align-items: center; }
+  .steps__n { grid-row: 1 / span 2; margin: 0; }
+  .steps li h3, .steps li p { grid-column: 2; margin: 0; }
+}
+@media screen and (max-width: 640px) {
+  .case__quote, .showcase__quote { border-left: 0 !important; padding-left: 0 !important; text-align: center; }
+}
+@media screen and (max-width: 640px) {
+  .clist li { justify-items: center; }
+  .cbox { justify-content: center; }
+  .page-cv .gantt { text-align: left; }
 }
