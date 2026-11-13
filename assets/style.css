@@ -635,5 +635,6 @@ a:not(.btn):not(.ccopy):hover, .topbar__meta a:not(.btn):hover, .band .cval:hove
 .gantt__bar { background: var(--accent); }
 .page-ai .compare__ai { color: var(--accent) !important; }
 @media screen and (max-width: 860px) { .hero:not(.hero--space) .hero__media { box-shadow: none; background: #fff; } }
-/* Тест: тонкий чёрный контур у оранжевых подзаголовков */
-.page-ai h3, .page-cv h3, .page-cv .gantt__label b, .page-ai .compare__ai { -webkit-text-stroke: 0.35px var(--ink); paint-order: stroke fill; }
+/* Сессия 25: серый текст — чёрным; цитата цветом кнопки */
+.page-ai, .page-cv { --ink-2: var(--ink); }
+.page-ai .quote, .page-cv .quote { color: var(--accent); }
