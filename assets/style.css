@@ -567,3 +567,25 @@ a, button { transition: color .2s var(--soft), background-color .2s var(--soft),
   .cbox { justify-content: center; }
   .page-cv .gantt { text-align: left; }
 }
+
+/* Сессия 20: кнопка «открыть» у Telegram; телефон — единые разделители и интервалы */
+a.ccopy { text-decoration: none; display: inline-flex; align-items: center; }
+.band .cval, .band .cval:visited { color: #fff; }
+@media screen and (max-width: 640px) {
+  /* одна система: секции без линий, внутри списков — тонкие линии, интервал 20px */
+  .page-ai .sec, .page-cv .sec { padding-top: 48px; }
+  .page-cv .feature { border-top: 0; padding: 0 0 8px; gap: 24px; }
+  .skills section { border-top: 1px solid var(--line); padding-top: 18px; margin-bottom: 18px; }
+  .compare { border-top: 1px solid var(--line); }
+  .compare__row { padding: 20px 0; }
+  .compare__row:last-child, .why > div:last-child { border-bottom: 0; }
+  .meta { gap: 20px; }
+  .tiles { gap: 12px; }
+  .tiles li, .case, .showcase, .cta__in { border-radius: 14px; }
+  .cta { margin-top: 48px; }
+  /* шаги: номер слева по середине, текст по центру экрана */
+  .steps { max-width: none; gap: 18px; }
+  .steps li { grid-template-columns: 36px 1fr 36px; text-align: center; }
+  /* контакты: без нижней линии */
+  .clist li:last-child { border-bottom: 0; }
+}
