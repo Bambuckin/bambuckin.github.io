@@ -596,12 +596,22 @@ a.ccopy { text-decoration: none; display: inline-flex; align-items: center; }
 
 /* Тест: цветное фото на ai (квадратное, мало места над головой) */
 @media screen and (min-width: 861px) {
-  .page-ai .hero__media { top: 72px; }
-  .page-ai .hero__media img { object-position: 50% 0; }
+  .page-ai .hero__media, .page-cv .hero__media { top: 72px; }
+  .page-ai .hero__media img, .page-cv .hero__media img { object-position: 50% 0; }
 }
 @media screen and (max-width: 860px) {
-  .page-ai .hero:not(.hero--space) .hero__media img { transform: scale(1.45); transform-origin: 50% 24%; object-position: 50% 0; }
+  .page-ai .hero:not(.hero--space) .hero__media img, .page-cv .hero:not(.hero--space) .hero__media img { transform: scale(1.45); transform-origin: 50% 24%; object-position: 50% 0; }
 }
 @media print {
-  .page-ai .hero__media img { transform: scale(1.45); transform-origin: 50% 24%; }
+  .page-ai .hero__media img, .page-cv .hero__media img { transform: scale(1.45); transform-origin: 50% 24%; }
+}
+
+/* Сессия 21: разделители и рамка плашки — цвет кнопки, бледно (ai и общая) */
+.page-ai, .page-cv { --line: oklch(0.54 0.19 33 / 0.22); --line-strong: oklch(0.54 0.19 33 / 0.55); }
+.page-ai .skills section, .page-cv .skills section, .page-cv .feature, .page-cv .meta, .page-ai .compare__head { border-color: var(--line-strong); }
+.page-ai .cta__in, .page-cv .cta__in { border-color: oklch(0.54 0.19 33 / 0.32); box-shadow: 0 1px 2px oklch(0.54 0.19 33 / 0.06), 0 14px 32px -14px oklch(0.54 0.19 33 / 0.28); }
+.page-ai .clist li, .page-cv .clist li { border-color: oklch(0.62 0.19 33 / 0.45); }
+@media screen and (max-width: 640px) {
+  .page-ai .skills section, .page-cv .skills section { border-color: var(--line); }
+  .page-ai .clist li:last-child, .page-cv .clist li:last-child { border-bottom: 0; }
 }
