@@ -631,3 +631,9 @@ a:not(.btn):not(.ccopy):hover, .topbar__meta a:not(.btn):hover, .band .cval:hove
 .page-ai .hero .role, .page-cv .hero .role { margin-top: 18px; font-size: calc(var(--fs-h1) * 0.5); line-height: 1.18; letter-spacing: -0.015em; color: var(--ink); max-width: 15em; text-wrap: balance; }
 @media screen and (max-width: 640px) { .page-ai .hero .role, .page-cv .hero .role { margin-inline: auto; } }
 .page-cv .hero .role { text-wrap: wrap; max-width: none; }
+
+/* Сессия 24: больше акцентов — заголовки разделов, номера шагов, полосы графика цветом кнопки */
+.page-ai h2, .page-cv h2 { color: var(--accent); }
+.page-ai .cta__title, .page-cv .cta__title, .band__label { color: inherit; }
+.steps__n { background: var(--accent) !important; color: #fff !important; box-shadow: none !important; }
+.gantt__bar { background: var(--accent); }
