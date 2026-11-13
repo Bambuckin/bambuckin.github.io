@@ -638,3 +638,11 @@ a:not(.btn):not(.ccopy):hover, .topbar__meta a:not(.btn):hover, .band .cval:hove
 /* Сессия 25: серый текст — чёрным; цитата цветом кнопки */
 .page-ai, .page-cv { --ink-2: var(--ink); }
 .page-ai .quote, .page-cv .quote { color: var(--accent); }
+/* Сессия 26: круг на телефоне — как в PDF (голова целиком); выводы без серой подложки */
+@media screen and (max-width: 860px) {
+  .page-ai .hero:not(.hero--space) .hero__media img, .page-cv .hero:not(.hero--space) .hero__media img { transform: scale(1.18); transform-origin: 50% 0; object-position: 50% 0; }
+}
+@media screen and (max-width: 640px) {
+  .compare__ai { background: none; padding: 0; margin-top: 4px; border-radius: 0; }
+}
+.showcase__quote .link { display: inline-block; margin-top: 16px; }
