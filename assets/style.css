@@ -603,7 +603,8 @@ a.ccopy { text-decoration: none; display: inline-flex; align-items: center; }
   .page-ai .hero:not(.hero--space) .hero__media img, .page-cv .hero:not(.hero--space) .hero__media img { transform: scale(1.45); transform-origin: 50% 24%; object-position: 50% 0; }
 }
 @media print {
-  .page-ai .hero__media img, .page-cv .hero__media img { transform: scale(1.45); transform-origin: 50% 24%; }
+  .page-ai .hero__media img, .page-cv .hero__media img { transform: scale(1.18); transform-origin: 50% 0; object-position: 50% 0; mix-blend-mode: multiply; }
+  .page-ai .hero__media, .page-cv .hero__media { background: var(--surface); }
 }
 
 /* Сессия 21: разделители и рамка плашки — цвет кнопки, бледно (ai и общая) */
