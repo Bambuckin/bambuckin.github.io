@@ -604,7 +604,7 @@ a.ccopy { text-decoration: none; display: inline-flex; align-items: center; }
 }
 @media print {
   .page-ai .hero__media img, .page-cv .hero__media img { transform: scale(1.18); transform-origin: 50% 0; object-position: 50% 0; mix-blend-mode: multiply; }
-  .page-ai .hero__media, .page-cv .hero__media { background: var(--surface); }
+  .page-ai .hero__media, .page-cv .hero__media { background: #fff; box-shadow: 0 0 0 0.3mm oklch(0.54 0.19 33 / 0.35); }
 }
 
 /* Сессия 21: разделители и рамка плашки — цвет кнопки, бледно (ai и общая) */
