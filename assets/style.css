@@ -687,3 +687,7 @@ a:not(.btn):not(.ccopy):hover, .topbar__meta a:not(.btn):hover, .band .cval:hove
     -webkit-mask-image: linear-gradient(to bottom, transparent 48%, #000 66%); mask-image: linear-gradient(to bottom, transparent 48%, #000 66%);
   }
 }
+/* s29c: тень фото не обрезается краем hero (overflow hidden): запас снизу 40px, тень ≤ 28px */
+@media screen and (min-width: 861px) {
+  .page-ai .hero:not(.hero--space) .hero__media, .page-cv .hero:not(.hero--space) .hero__media { bottom: 40px; box-shadow: 0 12px 24px -12px oklch(0.54 0.19 33 / 0.32); }
+}
