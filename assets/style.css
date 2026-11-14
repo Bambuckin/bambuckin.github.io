@@ -712,3 +712,68 @@ a:not(.btn):not(.ccopy):hover, .topbar__meta a:not(.btn):hover, .band .cval:hove
 @media screen and (min-width: 861px) {
   .page-ai .hero:not(.hero--space) .hero__media::before, .page-cv .hero:not(.hero--space) .hero__media::before { top: calc(max(var(--jl), var(--jr)) + 3%); box-shadow: 0 12px 20px -10px oklch(0.54 0.19 33 / 0.32); }
 }
+
+/* ═══ s30 ТЕСТ: телефон без сплошной центровки — только body.m-left (ai-m / index-m) ═══
+   Одна левая ось на 20px от края; акценты держат ритм: полоса у выводов и цитат, линия шагов. */
+@media screen and (max-width: 640px) {
+  .m-left .hero__copy, .m-left .shead, .m-left h2, .m-left .note, .m-left .why, .m-left .case,
+  .m-left .tiles li, .m-left .feature, .m-left .meta li, .m-left .skills section, .m-left .showcase,
+  .m-left .band__head, .m-left .clist li, .m-left .cta__in, .m-left .compare__row { text-align: left; }
+  /* шапка: фото слева по оси текста, имя и подзаголовок с левого края */
+  .m-left .hero:not(.hero--space) .hero__media { width: 112px; height: 112px; margin: 80px 0 0 var(--pad); }
+  .m-left .hero__copy { padding: 22px 0 8px; }
+  .m-left .hero h1, .m-left .lead, .m-left .hero .role { margin-inline: 0; }
+  .m-left.page-ai .hero .role { max-width: 17em; }
+  .m-left .actions { justify-content: flex-start; }
+  /* заголовки разделов: слева, без центровки */
+  .m-left .shead { justify-content: flex-start; }
+  .m-left h2 { margin-inline: 0; }
+  /* сравнение: вывод с тонкой полосой цвета кнопки */
+  .m-left .compare__row { gap: 6px; }
+  .m-left .compare__ai { border-left: 2px solid var(--accent); padding: 2px 0 2px 14px; margin-top: 6px; }
+  /* шаги: номер слева, текст слева, номера связаны тонкой линией */
+  .m-left .steps { gap: 0; }
+  .m-left .steps li { grid-template-columns: 36px 1fr; column-gap: 16px; align-items: start; text-align: left; padding-bottom: 22px; }
+  .m-left .steps li:last-child { padding-bottom: 0; }
+  .m-left .steps__n { grid-row: 1 / span 2; }
+  .m-left .steps li h3 { padding-top: 6px; margin-bottom: 4px; }
+  .m-left .steps li:not(:last-child)::after { content: ""; position: absolute; left: 17px; top: 42px; bottom: 6px; width: 2px; border-radius: 1px; background: oklch(0.54 0.19 33 / 0.22); }
+  /* плашка-призыв: текст слева, кнопка во всю ширину */
+  .m-left .cta__in { align-items: stretch; }
+  .m-left .cta__btn { width: 100%; justify-content: center; }
+  /* кейс и цитаты: полоса слева вместо центровки */
+  .m-left .case__quote, .m-left .showcase__quote { border-left: 2px solid var(--accent) !important; padding-left: 16px !important; text-align: left; }
+  /* подвал: подпись над значением, всё от левого края */
+  .m-left .clist li { justify-items: start; }
+  .m-left .cbox { justify-content: flex-start; }
+}
+@media screen and (max-width: 640px) {
+  /* полоса — только у цитаты и подписи, ссылка «Смотреть сюжет» ниже без полосы */
+  .m-left .showcase__quote { border-left: 0 !important; padding-left: 0 !important; }
+  .m-left .showcase__quote .quote, .m-left .showcase__quote figcaption { border-left: 2px solid var(--accent); padding-left: 16px; margin-top: 0; margin-bottom: 0; }
+  .m-left .showcase__quote figcaption { padding-top: 12px; }
+  .m-left .showcase { gap: 28px; }
+}
+/* s30b (после ресёрча 16+4 сайтов на 375): имя и фото одной строкой; один акцент на блок; больше воздуха между разделами */
+@media screen and (max-width: 640px) {
+  .m-left .hero { position: relative; }
+  .m-left .hero:not(.hero--space) .hero__media { position: absolute; top: 96px; right: var(--pad); left: auto; width: 96px; height: 96px; margin: 0; z-index: 3; }
+  .m-left .hero__copy { padding-top: 96px; }
+  .m-left .hero h1 { max-width: calc(100% - 116px); min-height: 96px; display: flex; align-items: center; }
+  .m-left .hero .role { margin-top: 20px; }
+  /* выводы в «Что я принёс»: без полосы, просто курсив — полоса остаётся только у цитаты */
+  .m-left .compare__ai { border-left: 0; padding: 0; margin-top: 6px; }
+  /* ритм: разделы дальше друг от друга, внутри плотнее */
+  .m-left .sec { padding-top: 72px; }
+  .m-left .cta { margin-top: 64px; }
+  .m-left .shead { margin-bottom: 24px; }
+}
+@media screen and (max-width: 640px) { .m-left .hero:not(.hero--space) .hero__copy { padding-top: 96px; } }
+@media screen and (max-width: 640px) { .m-left.page-cv .hero .role { text-wrap: balance; } }
+/* s30c: пользователь — «большие гапы между блоками не нравятся, они и так акцентированы заголовками» → минимум */
+@media screen and (max-width: 640px) {
+  .m-left .sec { padding-top: 36px; }
+  .m-left .cta { margin-top: 36px; }
+  .m-left .shead { margin-bottom: 14px; }
+}
+@media screen and (max-width: 640px) { .m-left .split { gap: 32px; } }
