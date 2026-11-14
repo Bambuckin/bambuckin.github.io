@@ -691,3 +691,24 @@ a:not(.btn):not(.ccopy):hover, .topbar__meta a:not(.btn):hover, .band .cval:hove
 @media screen and (min-width: 861px) {
   .page-ai .hero:not(.hero--space) .hero__media, .page-cv .hero:not(.hero--space) .hero__media { bottom: 40px; box-shadow: 0 12px 24px -12px oklch(0.54 0.19 33 / 0.32); }
 }
+/* s29d: тень и обводка фото — ровно от линии пиджака (--jl/--jr считает site.js); шаги однотонные приглушённые */
+@media screen and (min-width: 861px) {
+  .page-ai .hero:not(.hero--space) .hero__media, .page-cv .hero:not(.hero--space) .hero__media { --jl: 66%; --jr: 66%; overflow: visible; box-shadow: none; }
+  .page-ai .hero:not(.hero--space) .hero__media img, .page-cv .hero:not(.hero--space) .hero__media img { position: relative; border-radius: 18px; }
+  .page-ai .hero:not(.hero--space) .hero__media::after, .page-cv .hero:not(.hero--space) .hero__media::after {
+    z-index: 2; box-shadow: inset 1px 0 0 0 oklch(0.54 0.19 33 / 0.45), inset -1px 0 0 0 oklch(0.54 0.19 33 / 0.45), inset 0 -1px 0 0 oklch(0.54 0.19 33 / 0.45);
+    -webkit-mask-image: linear-gradient(to bottom, transparent var(--jl), #000 var(--jl)), linear-gradient(to bottom, transparent var(--jr), #000 var(--jr));
+    -webkit-mask-size: 50% 100%; -webkit-mask-position: 0 0, 100% 0; -webkit-mask-repeat: no-repeat;
+    mask-image: linear-gradient(to bottom, transparent var(--jl), #000 var(--jl)), linear-gradient(to bottom, transparent var(--jr), #000 var(--jr));
+    mask-size: 50% 100%; mask-position: 0 0, 100% 0; mask-repeat: no-repeat;
+  }
+  /* тень: отдельный слой под фото, начинается на линии пиджака */
+  .page-ai .hero:not(.hero--space) .hero__media::before, .page-cv .hero:not(.hero--space) .hero__media::before {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; top: min(var(--jl), var(--jr)); z-index: 0; border-radius: 0 0 18px 18px; pointer-events: none;
+    box-shadow: 0 12px 22px -10px oklch(0.54 0.19 33 / 0.32);
+  }
+}
+.page-ai .steps li .steps__n, .page-ai .steps li:nth-child(n) .steps__n, .page-ai .steps li:last-child .steps__n { --k: 82% !important; color: #fff !important; box-shadow: none !important; }
+@media screen and (min-width: 861px) {
+  .page-ai .hero:not(.hero--space) .hero__media::before, .page-cv .hero:not(.hero--space) .hero__media::before { top: calc(max(var(--jl), var(--jr)) + 3%); box-shadow: 0 12px 20px -10px oklch(0.54 0.19 33 / 0.32); }
+}
