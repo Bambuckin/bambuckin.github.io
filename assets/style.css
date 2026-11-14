@@ -678,3 +678,12 @@ a:not(.btn):not(.ccopy):hover, .topbar__meta a:not(.btn):hover, .band .cval:hove
 @media screen and (min-width: 861px) {
   .page-ai .hero:not(.hero--space) .hero__media, .page-cv .hero:not(.hero--space) .hero__media { top: 72px; right: clamp(24px, 2.5vw, 48px); bottom: 8px; width: calc(50% - clamp(24px, 2.5vw, 48px) - 32px); }
 }
+/* s29b: обводка фото только там, где пиджак (низ карточки), над белым фоном её нет */
+@media screen and (min-width: 861px) {
+  .page-ai .hero:not(.hero--space) .hero__media, .page-cv .hero:not(.hero--space) .hero__media { border: 0; box-shadow: 0 14px 32px -14px oklch(0.54 0.19 33 / 0.28); }
+  .page-ai .hero:not(.hero--space) .hero__media::after, .page-cv .hero:not(.hero--space) .hero__media::after {
+    content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+    box-shadow: inset 0 0 0 1px oklch(0.54 0.19 33 / 0.45);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 48%, #000 66%); mask-image: linear-gradient(to bottom, transparent 48%, #000 66%);
+  }
+}
